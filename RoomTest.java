@@ -38,7 +38,6 @@ public class RoomTest {
 	@Test
 	public void testCanPass(){
 		assertTrue(true);
-	}
-	
+	}	
 }
 
