@@ -6,9 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import dungeon.Room;
 /**
- * 
  * @author Douae
- *
  */
 public class RoomTest {
     Room room;
