@@ -5,12 +5,10 @@ package dungeon;
  *
  */
 public class LockedDoor extends Door{
-
-	public LockedDoor(String doorDescription) {
-		super(doorDescription);
-	}
-
-	public String getDescription(){
-		return doorDescription +" if you have a key";
+	protected boolean isUsable;
+	
+	public LockedDoor(){
+		super();
+		doorDescription="locked door";
 	}
 }

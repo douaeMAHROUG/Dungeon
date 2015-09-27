@@ -5,15 +5,16 @@ package dungeon;
  *
  */
 public class Door {
+    protected boolean isVisible=true;
+	protected String doorDescription="You are in front of a door";
+    protected Room nextRoom;
 
-	protected String doorDescription="You are in front of a door, you can exit";
+	public Room getNextRoom() {
+		return nextRoom;
+	}
 
-	public Door(String doorDescription) {
-		this.doorDescription = doorDescription;
+	public String doorDescription(){
+		return doorDescription;	
 	}
-	
-	public String getDescription(){
-		return doorDescription;
-		
-	}
-}
+ }
+ 

@@ -7,24 +7,19 @@ package dungeon;
 
 public class HiddenDoor extends Door{
 
-	protected boolean visible;
-	protected int numberOfActions;
+	protected boolean isVisible;
 	
-	public HiddenDoor(String doorDescription, boolean visible) {
-		super(doorDescription);
-		this.visible=false;
-		this.numberOfActions=0;
+	public HiddenDoor() {
+		super();
+		this.isVisible=false;
 	}
 
-	boolean isVisible(){
-		return numberOfActions!=0;
-	}
-	public String getDescription(){
-		if(isVisible()){
-			doorDescription=super.getDescription();
+	public String doorDescription(){
+		if(isVisible){
+			doorDescription=super.doorDescription();
 		}
 		else {
-			doorDescription="";
+			doorDescription=null;
 		}
 		return doorDescription;
 	}
