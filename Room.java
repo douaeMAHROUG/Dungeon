@@ -1,7 +1,7 @@
 import java.util.*;
 
 /**
- * @author legrand
+ * @author legrand & douae
  *
  */
 public class Room {
