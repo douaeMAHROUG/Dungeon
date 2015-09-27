@@ -1,44 +1,49 @@
+package dungeon;
 import java.util.*;
 
 /**
- * @author legrand & douae
+ * @author legrand
  *
  */
 public class Room {
 	
 	String name;
 	Map<String, Door> doors;
-	boolean GameIsFinish;
-	boolean GameIsLost; 
+	boolean gameWillFinish;
+	boolean gameWillLost;
+	
 	
 	
 
 	public Room(String name, Map<String, Door> doors) {
-		super();
 		this.name = name;
 		this.doors = doors;
-		this.GameIsFinish = false;
-		this.GameIsLost = false;
+		this.gameWillFinish = false;
+		this.gameWillLost = false;
 	}
 		
-	public Room(String name, Map<String, Door> doors, boolean gameIsFinish,
-		boolean gameIsLost) {
-		super();
+	public Room(String name, Map<String, Door> doors, boolean gamewillFinish,
+		boolean gameWillLost) {
 		this.name = name;
 		this.doors = doors;
-		this.GameIsFinish = gameIsFinish;
-		this.GameIsLost = gameIsLost;
+		this.gameWillFinish = gamewillFinish;
+		this.gameWillLost = gameWillLost;
+	}
+	
+	public void addDoor(String doorName,Door door){
+		this.doors.put(doorName, door);
 	}
 
 
 
-	public String RoomDescription() {
+	public String roomDescription() {
 		String result = "";
 		for(Map.Entry<String, Door> door : this.doors.entrySet()) {
-			String doorDescript = door.getValue().doorDescription;
+			String doorDescript = door.getValue().doorDescription();
 			if (doorDescript != null)
 				result += door.getKey()+" : "+doorDescript;
-		}	
+		}
+		return result;
 	}
 	
 	public boolean canPass(){
